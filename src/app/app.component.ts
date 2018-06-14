@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'D&D Initiative Tracker';
+  attributes = [
+    {'name': 'Wounds', 'value': 15},
+    {'name': 'Movement', 'value': '5/10/15/30'}
+  ];
 }
