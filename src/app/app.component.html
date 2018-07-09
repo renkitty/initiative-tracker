@@ -10,6 +10,15 @@
       <div *ngFor="let attr of attributes" style="display:flex;justify-content:space-between">
         <div style="font-weight:bold">{{attr.name}}</div> <div>{{attr.value}}</div>
       </div>
+
+      <div>
+        <div align="left">Spell Level</div>  <div align="center">Spell Level</div> <div align="right">Spell Level</div>
+        <div *ngFor="let slot of spellslots" style="display:flex;justify-content:space-between">
+          <div style="font-weight:bold">{{slot.name}}</div> <div>{{slot.value}}</div> <div>{{slot.expended}}</div>
+        </div>
+      </div>
+
+
       <p>
         The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
         A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
