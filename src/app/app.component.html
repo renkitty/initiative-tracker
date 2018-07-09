@@ -12,7 +12,8 @@
       </div>
 
       <div>
-        <div align="left">Spell Level</div>  <div align="center">Spell Level</div> <div align="right">Spell Level</div>
+        <b><i><span style="float:left;">Spell Level</span>  <span>Slots</span>  <span style="float:right">Expended</span></i></b>
+
         <div *ngFor="let slot of spellslots" style="display:flex;justify-content:space-between">
           <div style="font-weight:bold">{{slot.name}}</div> <div>{{slot.value}}</div> <div>{{slot.expended}}</div>
         </div>
