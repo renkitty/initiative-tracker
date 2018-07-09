@@ -1,16 +1,31 @@
 import { Component } from '@angular/core';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  versionChosen: string = "Dark Heresy";
+  versions: string[] = ['Dark Heresy', 'Fifth Edition'];
+
+
   title = 'D&D Initiative Tracker';
-  attributes = [
+
+
+  darkHeresyAttributes = [
     {'name': 'Wounds', 'value': 15},
     {'name': 'Movement', 'value': '5/10/15/30'}
   ];
+
+  fifthEditionAttributes = [
+    {'name': 'Hit Points', 'value': 26},
+    {'name': 'Armor Class', 'value': 16}
+  ];
+
+
 
 
   spellslots = [
