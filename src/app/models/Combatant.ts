@@ -17,6 +17,8 @@ export class Combatant {
     this.calculateSpellSlots(casterLevel);
   }
 
+
+
   calculateSpellSlots(casterLevel: number){
     this.spellslots = [
       {'name': 1, 'value': 4, 'expended': 0},
