@@ -17,18 +17,17 @@
     <mat-card-content>
 
 
-        <div *ngFor="let attr of currentCombatant.attributes" style="display:flex;justify-content:space-between">
-          <div style="font-weight:bold">{{attr.name}}</div> <div>{{attr.value}}</div>
-        </div>
+      <div *ngFor="let attr of currentCombatant.attributes" style="display:flex;justify-content:space-between">
+        <div style="font-weight:bold">{{attr.name}}</div> <div>{{attr.value}}</div>
+      </div>
 
-
-
-     <!-- This part only appears in 5th edition-->
+     <!-- This part only appears if the creatures has spell slots-->
       <div *ngIf="currentCombatant.hasSpellSlots">
         <br>
+        <div align="left">Caster Level: {{currentCombatant.casterLevel}}</div>
         <b><i><span style="float:left;">Spell Level</span>  <span>Slots</span>  <span style="float:right">Expended</span></i></b>
 
-        <div *ngFor="let slot of spellslots" style="display:flex;justify-content:space-between">
+        <div *ngFor="let slot of currentCombatant.spellslots" style="display:flex;justify-content:space-between">
           <div style="font-weight:bold">{{slot.name}}</div> <div>{{slot.value}}</div> <div>{{slot.expended}}</div>
         </div>
       </div>
