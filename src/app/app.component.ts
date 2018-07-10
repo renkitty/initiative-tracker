@@ -21,6 +21,7 @@ export class AppComponent {
 
   heresyPlaceholder: Combatant = new Combatant("Big Mek", [{'name': 'Wounds', 'value': 15},
     {'name': 'Movement', 'value': "5/10/15/20/25/30"}], "Does kaboom stuff.");
+
   fifthPlaceholder: Combatant = new Combatant("Anathema", [{'name': 'Hit Points', 'value': 143},
     {'name': 'Armor Class', 'value': 19}], "Does nommie stuff.");
 
