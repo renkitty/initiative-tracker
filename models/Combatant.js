@@ -8,7 +8,12 @@ let Combatant = new Schema({
   },
   description: {
     type: String
-  }
+  },
+  attributes: [
+    { name: String, value: String}
+  ]
+
+
 },{
   collection: 'combatants'
 });

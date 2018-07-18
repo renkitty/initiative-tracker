@@ -4,22 +4,34 @@ import { MatButtonModule, MatCardModule, MatToolbarModule } from '@angular/mater
 import { AppComponent } from './app.component';
 import { MatRadioModule } from '@angular/material/radio';
 import { FormsModule } from "@angular/forms";
+import { IndexComponent } from './index/index.component';
+import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule} from "@angular/common/http";
+import { CombatantService} from "./combatant.service";
 
-
+const routes: Routes = [
+  {
+    path: 'index',
+    component: IndexComponent
+  }
+]
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    IndexComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     MatButtonModule,
     MatToolbarModule,
     MatCardModule,
-    MatRadioModule
+    MatRadioModule,
+    RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [ CombatantService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
