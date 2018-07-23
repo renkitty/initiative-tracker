@@ -11,7 +11,10 @@ let Combatant = new Schema({
   },
   attributes: [
     { name: String, value: String}
-  ]
+  ],
+  initiative: {
+    type: Number
+  }
 
 
 },{

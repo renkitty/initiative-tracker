@@ -1,17 +1,13 @@
 <table class="table table-hover">
-  <thead>
-  <tr>
-    <td>Name</td>
-    <td>Description</td>
-  </tr>
-  </thead>
-
   <tbody>
-  <tr *ngFor="let combatant of combatants">
-    <td>{{ combatant.name }}</td>
-    <td>{{ combatant.description }}</td>
-    <td>
-      <div *ngFor="let attribute of combatant.attributes">{{ attribute.name }} {{attribute.value}}</div></td>
-  </tr>
+
+
+  <ul class="combatants">
+    <li *ngFor="let combatant of combatants"
+        [class.selected]="combatant === currentCombatant"
+        (click)="onSelect(combatant)">
+      <span>{{combatant.name}}</span>
+    </li>
+  </ul>
   </tbody>
 </table>
