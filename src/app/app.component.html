@@ -1,43 +1,41 @@
 <div style="text-align:center">
 
   <mat-toolbar color="primary">{{ title }}</mat-toolbar>
-  <mat-radio-group class="example-radio-group" [(ngModel)]="versionChosen">
-    <mat-radio-button class="example-radio-button" *ngFor="let version of versions" [value]="version"
-                      (change)="changeVersion($event)">
+<!--  <mat-radio-group [(ngModel)]="versionChosen">
+    <mat-radio-button *ngFor="let version of versions" [value]="version">
       {{version}}
     </mat-radio-button>
-  </mat-radio-group>
+  </mat-radio-group>-->
 
-  &nbsp;
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title><mat-toolbar color="primary">{{currentCombatant.name}}</mat-toolbar></mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-
-
-      <div *ngFor="let attr of currentCombatant.attributes" style="display:flex;justify-content:space-between">
-        <div style="font-weight:bold">{{attr.name}}</div> <div>{{attr.value}}</div>
-      </div>
-
-     <!-- This part only appears if the creatures has spell slots-->
-      <div *ngIf="currentCombatant.hasSpellSlots">
-        <br>
-        <div align="left">Caster Level: {{currentCombatant.casterLevel}}</div>
-        <b><i><span style="float:left;">Spell Level</span>  <span>Slots</span>  <span style="float:right">Expended</span></i></b>
-
-        <div *ngFor="let slot of currentCombatant.spellslots" style="display:flex;justify-content:space-between">
-          <div style="font-weight:bold">{{slot.name}}</div> <div>{{slot.value}}</div> <div>{{slot.expended}}</div>
+  <div *ngIf="index.currentCombatant">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title><mat-toolbar color="primary">{{index.currentCombatant.name}}</mat-toolbar></mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div *ngFor="let attr of index.currentCombatant.attributes" style="display:flex;justify-content:space-between">
+          <div style="font-weight:bold">{{attr.name}}</div> <div>{{attr.value}}</div>
         </div>
-      </div>
 
-      <p>
-        {{currentCombatant.description}}
-      </p>
-    </mat-card-content>
-  </mat-card>
+       <!-- This part only appears if the creatures has spell slots-->
+        <!--<div *ngIf="currentCombatant.hasSpellSlots">
+          <br>
+          <div align="left">Caster Level: {{currentCombatant.casterLevel}}</div>
+          <b><i><span style="float:left;">Spell Level</span>  <span>Slots</span>  <span style="float:right">Expended</span></i></b>
+
+          <div *ngFor="let slot of currentCombatant.spellslots" style="display:flex;justify-content:space-between">
+            <div style="font-weight:bold">{{slot.name}}</div> <div>{{slot.value}}</div> <div>{{slot.expended}}</div>
+          </div>
+        </div>-->
+
+        <p>
+          {{index.currentCombatant.description}}
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
 </div>
 
 <div>
-  <router-outlet></router-outlet>
+  <app-index #index></app-index>
 </div>

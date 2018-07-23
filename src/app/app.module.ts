@@ -8,6 +8,7 @@ import { IndexComponent } from './index/index.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule} from "@angular/common/http";
 import { CombatantService} from "./combatant.service";
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 const routes: Routes = [
   {
@@ -26,6 +27,7 @@ const routes: Routes = [
     FormsModule,
     HttpClientModule,
     MatButtonModule,
+    MatCheckboxModule,
     MatToolbarModule,
     MatCardModule,
     MatRadioModule,

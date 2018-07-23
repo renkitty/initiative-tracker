@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Combatant} from "./Combatant";
 import { CombatantService} from "../combatant.service";
+import { AppComponent} from "../app.component";
 
 @Component({
   selector: 'app-index',
@@ -8,8 +9,9 @@ import { CombatantService} from "../combatant.service";
   styleUrls: ['./index.component.css']
 })
 export class IndexComponent implements OnInit {
-
+  appComponent = new AppComponent;
   combatants: Combatant[];
+  currentCombatant: Combatant;
 
   constructor(private combatantservice: CombatantService) { }
 
@@ -22,4 +24,8 @@ export class IndexComponent implements OnInit {
       });
   }
 
+  onSelect(combatant: Combatant): void {
+    this.currentCombatant = combatant;
+    this.appComponent.updateCurrent(this.currentCombatant);
+  }
 }
