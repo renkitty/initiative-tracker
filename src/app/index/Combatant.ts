@@ -3,4 +3,5 @@ export interface Combatant{
   name: String;
   description: String;
   attributes: [{}];
+  initiative: number;
 }
